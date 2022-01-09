@@ -4,4 +4,4 @@ Let's assume that there is HTML page including some special logic, that logics w
 
 We definition `active tab` to the currently or last tab which users browsing or focusing. 
 
-Here using shared work to implement this logic.
+Here using [SharedWorker](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker) to implement this logic.
