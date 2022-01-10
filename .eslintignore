@@ -9,4 +9,4 @@ node_modules
 webpack.config.js
 dev/*.ts
 dist
-
+lib

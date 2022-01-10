@@ -7,7 +7,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     client: './dev/client.ts',
     worker: './dev/worker.ts',
@@ -19,6 +19,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -30,15 +31,4 @@ module.exports = {
       },
     ]
   },
-  optimization: {
-    minimize: false, 
-    usedExports: true,
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'tabManager.html',
-      chunks: ['client'],
-      template: './dev/index.html'
-    })
-  ]
 };

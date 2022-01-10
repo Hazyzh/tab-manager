@@ -2,7 +2,7 @@
   "name": "tab-manager",
   "version": "1.0.0",
   "description": "Definition one active tab on multiple tabs scenarios. ",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
