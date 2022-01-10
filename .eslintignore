@@ -1,0 +1,12 @@
+build/*.js
+config/*.js
+*.test.js
+test/*.js
+*.spec.js
+src/untils/*.js
+node_modules
+.eslintrc.js
+webpack.config.js
+dev/*.ts
+dist
+
