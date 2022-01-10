@@ -1,11 +1,11 @@
-import { TabManagerWorkerCaller } from '../src/caller';
-import { tabManagerEvents } from '../src/helper';
+import { TabsManagerWorkerCaller } from '../src/caller';
+import { TabsManagerEvents } from '../src/helper';
 
-const tabManager = new TabManagerWorkerCaller({
+const tabManager = new TabsManagerWorkerCaller({
   workerPath: 'worker.js',
 });
 
-tabManager.addListener(tabManagerEvents.activeTab, (isActive: boolean) => {
-  document.title = isActive ? '🧐 active' : 'inactive';
+tabManager.addListener(TabsManagerEvents.activeTab, (isActive: boolean) => {
+  document.title = isActive ? '✅ active' : 'inactive';
 });
 tabManager.init();

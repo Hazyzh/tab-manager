@@ -1,4 +1,4 @@
-import { TabManagerWorkerServer } from '../src/worker';
+import { TabsManagerWorkerServer } from '../src/worker';
 
-const server = new TabManagerWorkerServer();
+const server = new TabsManagerWorkerServer();
 server.init();

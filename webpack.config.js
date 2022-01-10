@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'tabManager.html',
+      filename: 'index.html',
       chunks: ['client'],
       template: './dev/index.html'
     })

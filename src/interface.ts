@@ -1,4 +1,4 @@
-export interface TabManagerWorkerCallerParams {
+export interface TabsManagerWorkerCallerParams {
   workerPath: string
   workerName?: string
 }

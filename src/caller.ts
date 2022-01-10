@@ -2,15 +2,15 @@ import { EventEmitter } from 'events';
 import { v4 as uuid } from 'uuid';
 
 import {
-  tabManagerEvents,
+  TabsManagerEvents,
   workerEvents,
 } from './helper';
 import {
   IWorkerMessageData,
-  TabManagerWorkerCallerParams,
+  TabsManagerWorkerCallerParams,
 } from './interface';
 
-export class TabManagerWorkerCaller extends EventEmitter {
+export class TabsManagerWorkerCaller extends EventEmitter {
   private readonly workerPath: string;
 
   private readonly workerName: string;
@@ -21,7 +21,7 @@ export class TabManagerWorkerCaller extends EventEmitter {
 
   isActive = true;
 
-  constructor(options: TabManagerWorkerCallerParams) {
+  constructor(options: TabsManagerWorkerCallerParams) {
     super();
     this.workerPath = options.workerPath;
     if (!this.workerPath || typeof this.workerPath !== 'string') {
@@ -52,7 +52,7 @@ export class TabManagerWorkerCaller extends EventEmitter {
       if (type === workerEvents.activeTabId) {
         const isActive = id === this.id;
         this.isActive = isActive;
-        this.emit(tabManagerEvents.activeTab, isActive);
+        this.emit(TabsManagerEvents.activeTab, isActive);
       }
     });
 
@@ -104,8 +104,8 @@ export class TabManagerWorkerCaller extends EventEmitter {
   };
 
   private error(message: string) {
-    this.emit(tabManagerEvents.error, message);
+    this.emit(TabsManagerEvents.error, message);
   }
 }
 
-export default TabManagerWorkerCaller;
+export default TabsManagerWorkerCaller;

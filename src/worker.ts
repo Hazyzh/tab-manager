@@ -4,7 +4,7 @@ import { IWorkerMessageData } from './interface';
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any,no-restricted-globals
 const globalSelf = self as any;
 
-export class TabManagerWorkerServer {
+export class TabsManagerWorkerServer {
   private connections: MessagePort[] = [];
 
   private activeId: string;
@@ -57,4 +57,4 @@ export class TabManagerWorkerServer {
   };
 }
 
-export default TabManagerWorkerServer;
+export default TabsManagerWorkerServer;
