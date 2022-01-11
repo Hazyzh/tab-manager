@@ -1,6 +1,6 @@
 # tabs-manager
-[![npm](https://img.shields.io/npm/v/jest-html-reporters.svg)](https://www.npmjs.com/package/tabs-manager)
-[![license](https://img.shields.io/npm/l/jest-html-reporters.svg)](https://www.npmjs.com/package/tabs-manager)
+[![npm](https://img.shields.io/npm/v/tabs-manager.svg)](https://www.npmjs.com/package/tabs-manager)
+[![license](https://img.shields.io/npm/l/tabs-manager.svg)](https://www.npmjs.com/package/tabs-manager)
 
 Let's assume that there is HTML page including some special logic, that logics will trigger by some event listener. Users maybe open multiple tabs all including this page. Once the event is emitted, all tabs will trigger that event, that's may caused some performance issue or unexpected error. So we would like to mark one tab as `active` tab, once we received the event, only this tab will trigger to execution the code logic.  
 
