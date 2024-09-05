@@ -13,7 +13,7 @@ import {
 export class TabsManagerWorkerCaller extends EventEmitter {
   private readonly workerPath: string;
 
-  private readonly workerName: string;
+  private readonly workerOptions: string | Record<string, unknown>;
 
   private workerInstance: SharedWorker;
 
@@ -27,7 +27,7 @@ export class TabsManagerWorkerCaller extends EventEmitter {
     if (!this.workerPath || typeof this.workerPath !== 'string') {
       this.error('Required workerPath parameters missed!');
     }
-    this.workerName = options.workerName ?? 'Tab Manager';
+    this.workerOptions = options.workerOptions ?? 'Tab Manager';
     this.id = uuid();
   }
 
@@ -42,12 +42,11 @@ export class TabsManagerWorkerCaller extends EventEmitter {
       this.error('ShareWorker not support!');
       return;
     }
-    this.workerInstance = new SharedWorker(this.workerPath, this.workerName);
+    this.workerInstance = new SharedWorker(this.workerPath, this.workerOptions);
   }
 
   private initWorkerListener() {
     this.workerInstance.port.addEventListener('message', (e: MessageEvent) => {
-      console.log('eeee', e);
       const { type, id } = e.data;
       if (type === workerEvents.activeTabId) {
         const isActive = id === this.id;
