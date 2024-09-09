@@ -1,6 +1,6 @@
 {
   "name": "tabs-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Definition one active tab on multiple tabs scenarios. ",
   "main": "./lib/index.js",
   "scripts": {
@@ -47,5 +47,9 @@
   },
   "directories": {
     "lib": "lib"
-  }
+  },
+  "files": [
+    "readme.md",
+    "lib/"
+  ]
 }
