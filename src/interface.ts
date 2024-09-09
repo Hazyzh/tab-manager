@@ -1,6 +1,6 @@
 export interface TabsManagerWorkerCallerParams {
   workerPath: string
-  workerName?: string
+  workerOptions?: string | Record<string, unknown>
 }
 
 export interface IWorkerMessageData {
