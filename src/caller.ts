@@ -67,7 +67,11 @@ export class TabsManagerWorkerCaller extends EventEmitter {
     if (!this.workerInstance) return;
 
     window.addEventListener('focus', this.setActiveTab);
-    document.addEventListener('visibilitychange', this.setActiveTab);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState !== 'hidden') {
+        this.setActiveTab();
+      }
+    });
     window.addEventListener('unload', this.closeWindow);
 
     if (document.visibilityState === 'visible') {
